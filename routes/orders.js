@@ -14,7 +14,7 @@ const router = express.Router();
 router.post("/add", newOrder);
 router.post("/add/milk", newMilk);
 router.put("/update/:id", updateOrder);
-router.get("/updateStatus/:id", updateStatusOrder);
+router.put("/updateStatus/:id", updateStatusOrder);
 router.delete("/delete/:id", deleteOrder);
 router.get("/checkCapacity/:date", checkCapacityMilk);
 

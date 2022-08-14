@@ -72,7 +72,9 @@ export const updateStatusOrder = async (req, res) => {
   const orderId = req.params.id;
   try {
     let updatedOrder = await Order.findById(orderId);
-    res.status(200).json(updateOrder.status);
+    updatedOrder.status = req.body;
+    updatedOrder = await updatedOrder.save();
+    res.status(200).json(updatedOrder.status);
   } catch (error) {
     res.status(404).json(error.message);
   }
